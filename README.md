@@ -93,7 +93,7 @@ To use them everywhere follow these steps:
    sudo cp ./Scripts/* /usr/local/hadoop-scripts
    ```
 
-3. Change the own:
+3. Change the owner:
 
    ```bash
    sudo chown -R <your_user>:<your_group> /usr/local/hadoop-scripts
