@@ -28,12 +28,11 @@ If you want to configure your environment, you have to follow these steps:
    docker stop historyserver nodemanager1 resourcemanager datanode1 namenode
    ```
 
-2. Go to your local **big-data-europe/docker-hadoop** and modify the `docker-compose.yml` file adding this two lines under *nodemanager1*:
+2. Go to your local **big-data-europe/docker-hadoop** and modify the `docker-compose.yml` file adding this two lines under *namenode*:
 
    ```dockerfile
-   nodemanager1:
-   ...
-   	volumes:                            
+   namenode:
+   ...                          
          	- <YOUR-LOCAL-PATH>:/home/shared 
    ...
    ```
@@ -63,13 +62,13 @@ If you want to configure your environment, you have to follow these steps:
 Use this command:
 
 ```bash
-docker exec -it nodemanager1 bash
+docker exec -it namenode bash
 ```
 
 If you are on Ubuntu or you use WSL, you can create an alias of this command adding this line to the file **~/.bashrc**:
 
 ```bash
-alias docker-hadoop='docker exec -it nodemanager1 bash'
+alias docker-hadoop='docker exec -it namenode bash'
 ```
 
 
