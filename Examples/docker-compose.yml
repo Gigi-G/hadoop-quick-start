@@ -11,6 +11,10 @@ services:
       - hadoop
     volumes:
       - ./data/namenode:/hadoop/dfs/name
+    #######################################
+    # THIS IS WHAT YOU HAVE TO INSERT     #
+      - <YOUR-LOCAL-PATH>:/home/shared    #
+    #######################################
     environment:
       - CLUSTER_NAME=test
     ports:
@@ -61,11 +65,6 @@ services:
       - "8042:8042"
     env_file:
       - ./hadoop.env
-    #####################################
-    # THIS IS WHAT YOU HAVE TO INSERT   #
-    volumes:                            #
-      - <YOUR-LOCAL-PATH>:/home/shared  #
-    #####################################
     
   historyserver:
     image: bde2020/hadoop-historyserver:1.2.0-hadoop2.8-java8
