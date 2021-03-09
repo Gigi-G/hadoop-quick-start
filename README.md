@@ -1,4 +1,4 @@
-# hadoop-scripts
+# Docker-Hadoop
 
 ## Table of contents
 
@@ -7,6 +7,7 @@
    * [Start](#start)
    * [Configure Environment](#configure-environment)
    * [Use Docker Hadoop](#use-docker-hadoop)
+   * [Scripts](#scripts)
 
 <!--te-->
 
@@ -65,3 +66,50 @@ Use this command:
 docker exec -it nodemanager1 bash
 ```
 
+If you are on Ubuntu or you use WSL, you can create an alias of this command adding this line to the file **~/.bashrc**:
+
+```bash
+alias docker-hadoop='docker exec -it nodemanager1 bash'
+```
+
+
+
+## Scripts
+
+- `start-docker-hadoop.sh`: to start docker hadoop containers;
+- `stop-docker-hadoop.sh`: to start docker hadoop containers.
+
+To use them everywhere follow these steps:
+
+1. Create **hadoop-scripts** directory in **/usr/local**:
+
+   ```bash
+   sudo mkdir /usr/local/hadoop-scripts
+   ```
+
+2. Move the **Scripts** content in **/usr/local/hadoop-scripts**:
+
+   ```bash
+   sudo cp ./Scripts/* /usr/local/hadoop-scripts
+   ```
+
+3. Change the own:
+
+   ```bash
+   sudo chown -R <your_user>:<your_group> /usr/local/hadoop-scripts
+   ```
+
+4. Add the execution permission:
+
+   ```bash
+   sudo chmod a+x /usr/local/hadoop-scripts/*
+   ```
+
+5. Add these lines at the end of the file **~/.bashrc**:
+
+   ```bash
+   export HADOOP_SCRIPTS_HOME=/usr/local/hadoop-scripts
+   export PATH=$PATH:$HADOOP_SCRIPTS_HOME
+   ```
+
+   
