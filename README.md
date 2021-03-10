@@ -1,4 +1,4 @@
-# Docker-Hadoop
+# Hadoop-Quick-Start
 
 ## Table of contents
 
