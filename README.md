@@ -8,6 +8,7 @@
    * [Configure Environment](#configure-environment)
    * [Use Docker Hadoop](#use-docker-hadoop)
    * [Scripts](#scripts)
+   * [Example](#example)
 
 <!--te-->
 
@@ -111,4 +112,18 @@ To use them everywhere follow these steps:
    export PATH=$PATH:$HADOOP_SCRIPTS_HOME
    ```
 
-   
+
+
+
+## Example
+
+Inside **./handoop** directory you can find a simple example called *WordCount*. First of all, you have to install **Maven**.
+
+Then you can generate the jar file using the following command:
+
+```bash
+mvn package
+```
+
+Now you can use it!
+
